@@ -1,0 +1,17 @@
+/*Alterar cor de fundo*/
+background-color: [nome_da_cor_ou_RGB]
+
+/* ##### FONTE*/
+/*Alterar cor da fonte*/
+color: [nome_da_cor_ou_RGB]
+
+/*Alterar fonte*/
+font-family: [nome_da_fonte]
+
+/*Alterar tamanho fonte
+OBS: "em" */
+font-size: [tamanho_da_fonte]px
+font-size: [tamanho_da_fonte]em
+
+/*Alinhamento de texto*/
+text-align: [modo_que_será_alinhado]

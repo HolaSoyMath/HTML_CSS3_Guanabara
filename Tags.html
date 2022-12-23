@@ -1,3 +1,15 @@
+<!-- ########## DICAS -->
+1- Para citar todos os arquivos presentes no local da pasta, pode ser utilizado o atalho "Ctrl" + "Espaço".
+
+2- Para colocar um trecho de frase dentro de uma tag única.
+	2.1 - Selecionar o texto a ser colocado entre a tag
+	2.2 - Apertar as teclas de atalho "Ctrl" + "Shift" + "P"
+	2.3 - Selecionar a opção "Emmet: wrap with abbreviation"
+		OBS: Caso não apareça, basta escrever "abb" e selecionar a opção
+	2.4 - Aperte enter para selecionar a opção
+	2.5 - Escreva apenas o nome da tag, NÃO É NECESSÁRIO COLOCAR OS SINAIS DE MAIOR/MENOR OU A BARRA para finalizar uma tag
+		EX: "image" --> Sem os sinais de MAIOR/MENOR ou a Barra para finalizar uma tag
+
 <!-- ########## TAGS -->
 
 <!-- ##### HEAD -->
@@ -63,3 +75,243 @@ alt = Texto explicativo da imagem para que tenha uma melhor acessibilidade, por 
 <!-- Para carregar imagem de um link -->
 <img src="[link_da_imagem]" alt="[texto_alternativo]">
 
+<!-- Negrito 
+strong
+Para deixar em negrito vamos utilizar a tag "Strong" onde semanticamente falando ela é a mais correta.
+Para questão de forma apenas, podemos utiliza tag "b" onde irá fazer o negrito da mesma forma-->
+<p>Nessa frase, tenho um <strong>[texto_em_negrito]</strong> usando a tag "Strong".</p>
+
+<!-- Itálico 
+em
+Para deixar em itálico vamos utilizar a tag "em" onde semanticamente falando ela é a mais correta.
+Para questão de forma apenas, podemos utiliza tag "i" onde irá fazer o itálico da mesma forma-->
+<p>Nesta frase temos um <em>[texto_em_itálico]</em> usando a tag EM (semântica).</p>
+
+<!-- Marca-Texto  
+mark
+Para deixar com Marca-Texto vamos utilizar a tag "mark" onde semanticamente falando ela é a mais correta. -->
+<p>Podemos criar tambem <mark>um texto marcado</mark> usando a tag "mark"</p>
+
+<!-- Texto um pouco maior (texto grande)
+big
+Para deixar o texto selecionado um pouco maior que a fonte atual usamos a tag "big" -->
+<p>Estamos criando um <big>[texto_maior]</big> e um texto pequeno nesse parágrafo</p>
+
+<!-- Texto um pouco menor (texto pequeno)
+small
+Para deixar o texto selecionado um pouco menor que a fonte atual usamos a tag "small" -->
+<p>Estamos criando um texto grande e um <small>[texto_menor]</small> nesse parágrafo</p>
+
+<!-- Texto riscado no meio (Texto deletado: deve ser lido porém nao considerado)
+del
+Para deixar o texto selecionado com um risco no meio usamos a tag "del" -->
+<p>Podemos marcar <del>[texto_a_ser_riscado]</del> para indicar que ele deve ser lido, mas não considerado</p>
+
+<!-- Texto sublinhado (Texto inserido: para dar ênfaase e indicar que ele foi adicionado depois)
+ins
+Para deixar o texto sublinhado usamos a tag "ins" (Semântico)
+da mesma forma podemos utilizar a tag "u" (Não semântico) -->
+<p>Podemos marcar <ins>[texto_a_ser_sublinhado]</ins> para dar uma ênfase e indicar que ele foi acidionado depois.</p>
+
+<!-- Texto sobrescrito (Texto "elevado", colocar o texto como se ele estivesse na posição de número elevado, potência, 3^9)
+sup
+Para deixar o texto "elevado" usamos a tag "sup" (Semântico) -->
+<p>Para inserir coisas do tipo x<sup>[texto_a_ser_elevado]</sup>+3</p>
+
+<!-- Texto subscrito (Texto "inferior", colocar o texto como se ele estivesse na parte de baixo da palavra, por exemplo a fórmula da água: H2O)
+sub
+Para deixar o texto "inferior" usamos a tag "sub" (Semântico) -->
+<p>Para inserir coisas do tipo H<sub>2</sub>O</p>
+
+<!-- Código-fonte (texto mono-espaçado, todos os caracteres ocupam um espaço igual na tela, EX: todos ocupam exatamente 5 pixels, independente se escrevermos a letra I ou E; Usada principalmente para citar códigos)
+code
+Para deixar o texto moso-espaçado usamos a tag "code" (Semântico) -->
+<p>O comando <code>[texto_mono_espaçado]</code> é escrito em linguagem JavaScript.</p>
+
+<!-- Manter a tabulação
+pre
+Para manter a tabulação, ou seja, os espaços dados no começo da escrita ou as linhas puladas durante uma escrita, utilizamos a tag "pre" -->
+<pre>
+	<code>
+		num = int(input('Digite um numero'))
+		if num % 2 == 0:
+			print(f'O numero {num} é PAR)
+		else:
+			print(f'O numero {num} é ÍMPAR)
+		print('Fim do programa!')
+	</code>
+</pre>
+
+<!-- Citação simples (sem quebra de linha)
+q
+Para citarmos alguma frase por exemplo, ao invés de colocar as aspas de forma manual, usamos a tag "q" -->
+<p>Como diria o pai de um amigo: <q>O computador é um burro muito rápido.</q></p>
+
+<!-- Citação completa
+blockquote
+Para citarmos alguma frase de forma mais completa, deixando a frase um pouco identada, e citando o link por exemplo do autor da frase ou o nome dele, usamos a "blockquote" -->
+<blockquote cite="[link_do_livro_citado]">
+	A diferença entre os elementos inline e um bloco de texto é importante. Os elementos HTML neste capítulo descrevem os blocos de texto.
+</blockquote>
+
+<!-- Abreviação
+abbr
+Ao abreviarmos uma palavra, podemos então indicar o que ela significa, assim quando o usuário colocar o mouse em cima da palavra, aparecerá a explicação daquela abreviação de forma completa -->
+<p>Estou estudando <abbr title="[explicação_da_abreviação]">[texto_a_ser_exibido]</abbr>Estou adorando!</p>
+
+<!-- ### LISTAS -->
+<!-- Listas ordenadas
+ol ==> li
+São listas que conforme a ordem que são digitadas criam um número indicando a ordem delas, cada item deve ser separado utilizando a tag "li" 
+
+PARAM type: ao apertar "Ctrl" + "Espaço" aparecem as opções de lista ordenada, que podem ser classificas por:
+1, 2, 3...
+a, b, c...
+A, B, C...
+
+PARAM start: Indica qual o valor de início da tabela, se começar do número 4 por exemplo, indicar nesse parâmetro.
+OBS: Para o número 1, não precisa ser indicado. -->
+<ol type="" start="">
+	<li>[item_1]</li>
+	<li>[item_2]</li>
+	<li>[item_3]</li>
+</ol>
+
+<!-- Listas não ordenadas
+ul ==> li
+São listas que nao precisam ser enumeradas, pois não faz diferença a ordem delas, como uma lsita do mercado por exemplo.
+
+PARAM type: Podemos utilizar o:
+disc (padrão) ==> uma bola preta (disco de hóquei)
+circle ==> um circulo apenas (bambolê)
+square ==> o quadrado preenchido -->
+<ul type="">
+	<li>[item_1]</li>
+	<li>[item_2]</li>
+	<li>[item_3]</li>
+</ul>
+
+<!-- Listas de definições
+dl ==> dd e/ou dl
+Lista de definição é uma lista onde colocamos um termo e na sequencia a definição desse termo, essa lista tem um resultado onde o termo fica colado a esquerda, e a sua definição tem um espaçamento antes -->
+<dl>
+	<dt>[termo_1]</dt>
+	<dd>[descrição_1]</dd>
+	<dt>[termo_2]</dt>
+	<dd>[descrição_2]</dd>
+	<dt>[termo_3]</dt>
+	<dd>[descrição_3]</dd>
+</dl>
+
+<!-- ### LINKS -->
+<!-- Link externo/interno
+a
+Para gerar um link entre sites, é preciso utilizar a tag "a" 
+
+PARAM href: O link/pasta que será feito o redirecionamento.
+	OBS: Para poder "voltar" uma pasta, utilizamos "../"
+
+PARAM target: Podemos utilizar 2 opções:
+	Com o valor sendo "_blank" abre o link em uma nova guia.
+	Com o valor sendo "_self" indica que o link é seu e pode ser aberto na mesma guia
+
+PARAM rel: Categoria do arquivo que estamos linkando
+	link EXTERNO: external
+	link INTERNO: next OU prev
+	
+OBS: Caso tenha espaço no meio, troque o espaço por "%20" -->
+<p>Você pode acessar meu <a href="[link_a_ser_redirecionado]" target="[nova_guia_ou_própria]" rel="[categoria]">[texto_clicável]</a></p>
+
+<!-- Link para download
+a
+Para gerar um link para downlaod é preciso utilizar a tag "a" 
+
+PARAM href: Local do arquivo a ser baixado.
+	OBS: Para poder "voltar" uma pasta, utilizamos "../"
+	
+PARAM download: Nome do arquivo a ser baixado.
+
+PARAM type: Tipo do arquivo a ser baixado.
+	application/zip
+	application/pdf
+	OBS: Existe o site "iana.org" que tem uma lsita de todos os tipos de arquivos a serem baixados.
+	
+OBS: Caso tenha espaço no meio, troque o espaço por "%20". -->
+<a href="[caminho_do_arquivo]" download="[nome_do_arquivo]" type="[tipo_do_arquivo]">[texto_clicável]</a>
+
+<!-- ### MÍDIAS -->
+<!-- Imagem Dinâmica
+source
+Para poder utilizar uma imagem dinâmica que vai atualizando conforme o tamanho da tela, vamos utilizar a tag "Source" em conjunto com a tag "Picture" 
+DICA: Para utilizar o source, podemos apenas escrever "source" e escolher o método "source:media:type"
+
+PARAM media: Qual a condição para aquela imagem ser utilizada
+	No exemplo ela está dizendo que:
+		"Se o tamanho maximo da janela for 750px, use X imagem; caso o tamanho máximo seja 1000px, use Y imagem; por padrão, use Z imagem
+
+PARAM srcset: Qual a imagem a ser utilizada caso a condição seja atendida.
+	OBS: Nesse parâmetro o "CTRL" + "Espaço" não funciona.
+	
+PARAM type: Qual o tipo da imagem a ser utilizada
+
+OBS: A sequencia funciona igual a um "if" então deve ser respeitada conforme o que deseja.
+OBS2: Caso as condições dos "sources" não sejam atendidas, será utilizada a informação da tag "IMG". 
+OBS3: O parametro "Media" pode possuir outros parâmetros também. -->
+<picture>
+	<source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+	<source media="(max-width: 1000px)" srcset="imagens/foto-m.png" type="image/png">
+	<img src="imagens/foto-g.png" alt="Imagem flexível">
+</picture>
+
+<!-- Áudio
+audio
+Para colocarmos um áudio no corpo da página, usamos a tag "audio"
+
+ATRIBUTO preload: Temos 3 opções, sendo elas:
+	auto (padrão): Site só para de mostrar que carregou quando o audio todo for baixado (Não recomendado por alguns audios serem pesados, fazendo com que seja consumida mt banda)
+	metadata: Baixa apenas as informações de MEtadata, como duração por exemplo, mas não baixa o arquivo (recomendado)
+	none: Não mostra nada de informação do audio, apenas gera o campo para dar o play.
+	
+ATRIBUTO autoplay: Inicia o audio assim que a pagina abre.
+
+ATRIBUTO controls: Gera no corpo da página um controle onde é possível ter a iteração com play/pause, volume, entre outros
+
+ATRIBUTO loop: Quando o audio acabar, começa de novo
+
+OBS: Recomendado utilizar o audio juntamente com o Source, caso o navegador não suporte o áudio, deixar uma mensagem para o usuário informando o erro -->
+<audio preload="none" autoplay controls loop> <!-- AUTO, METADATA, NONE -->
+	<source src="[local_midia]" type="audio/mpeg">
+	<source src="[local_midia]" type="audio/wav">
+	<source src="[local_midia]" type="audio/ogg">
+	<p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="midia/guanacast-33.mp3">Clique aqui para baixar o arquivo MP3</a></p>
+</audio>
+
+<!-- Vídeo
+video
+Para colocarmos um vídeo no corpo da página, usamos a tag "video"
+
+ATRIBUTO width: Largura do vídeo
+
+ATRIBUTO poster: Thumbnail do video
+
+ATRIBUTO controls: Adiciona os controles de play/pause, volume entre outros
+
+OBS: Recomendado utilizar o video juntamente com o Source, caso o navegador nao suporte o áudio, deixar uma mensagem para o usuário informando o erro 
+OBS2: O recomendado é upar o vídeo em alguma outra plataforma como YouTube, Vimeo, entre outros, para que não precise utilizar muita banda, fazendo com que o site fique pesado.
+OBS3: Para conseguir utilizar os sites, é preciso clicar em "compartilhar" e selecionar a opção "incorporar", assim o próprio sistema gera o HTML para inserir o vídeo no site. -->
+<!-- VÍDEO LOCAL -->
+<video width="[largura_do_video]" poster="[thumbnail_do_video]" controls>
+	<source src="midia/meu-video.mp4" type="video/mp4">
+	<source src="midia/meu-video.m4v" type="video/mp4">
+	<source src="midia/meu-video.webm" type="video/webm">
+	<source src="midia/meu-video.ogv" type="video/ogg">
+	<p>Seu navegador não tem compatibilidade com reprodução de vídeos</p>
+</video>
+<!-- VÍDEO HOSPEDADO -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9rZKhGrQ1wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<!--  -->
+
+
+<!--  -->
