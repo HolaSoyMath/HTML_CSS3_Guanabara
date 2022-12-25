@@ -1,17 +1,350 @@
+/*########## DICAS*/
+
+/*
+HEIGHT ==> ALTURA
+WIDTH ==> LARGURA
+WEIGHT ==> PESO
+*/
+
+/*
+TAG BOX-LEVEL (Gera uma linha nova para o elemento, ocupa a largura inteira da tela): 
+<div>
+<h1>-<h6>
+<p>
+<main>
+<header>
+<nav>
+<article>
+<aside>
+<footer>
+<form>
+<video>
+
+TAG INLINE-LEVEL (Gera o elemento na mesma linha, ocupa apenas a largura necessária para a caixa): 
+<span>
+<a>
+<code>
+<small>
+<strong>
+<em>
+<sup>-<sub>
+<label>
+<button>
+<input>
+<select>
+*/
+
+/*##### CORES*/
+/*Para colocar cores temos 4 métodos diferentes:
+1- Colocar o nome em ingles
+	color: white
+	color: black
+	color: yellow
+	
+2- Código hexadecimal (6 caracteres)
+	color: #ffffff
+	color: #000000
+	color: #ffff00
+	
+3- Código RGB
+	color: rgb(255, 255 ,255)
+	color: rgb(0, 0, 0)
+	color: rgb(255, 255, 0)
+	
+4- Código HSL (H = matiz (numero), S = saturação (porcentagem), L = luminosidade (porcentagem))
+	color: hsl(240, 100%, 50%)
+	color: hsl(0, 0%, 0%)
+	color: hsl(60, 100%, 50%)
+	
+OBS: É possível tambem mexer com a transparência, no VSCode baste movimentar uma barra que tem ao lado da cor principal e a transparência é aplicada automaticamente
+*/
+
+/*##### HARMONIA DE CORES*/
+/*
+Ferramentas interessantes a serem utilizadas:
+	- color.adobe.com
+	- paletton.com (Dá um preview da página tbm)
+	- coolors.com (Gera as cores de forma aleatória)
+*/
+
+/*DICA SHORTHAND
+Podemos simplificar o estilo de fonte em uma unica linha chamada de "Shorthand"*/
+font: [font_style] [font_weight] [font_size] [font_family]
+font: italic bolder 3em 'Work Sans', sans-serif;
+
+/*IMPORTAR FONTES DE SITES EXTERNOS
+Para poder importar fontes podemos acessar o Google Fonts
+Procurar a fonte que deseja utilizar
+Adicionar na lista
+
+OBS: Não esquecer de usar o @import no começo da parte de Style, seja no arquivo CSS ou como chamada local*/
+
+/*Separar as tags por ID ou CLASS
+	HTML ==> id    em CSS será "#"
+	HTML ==> class em CSS será "."
+	Pseudo-Classe em CSS será ":"
+	Pseudo-Elemento em CSS será "::"
+	Hierarquia (Children) em CSS será ">"
+*/
+
+/*PSEUDO-CLASSES
+São na verdade ações que acontecem na págna, e ao acontecer tal ação as propriedades configuradas serão executadas.
+mais detalhes no arquivo Pseudoclasse.css*/
+
+/*Especificar tags para estilização
+Para dizer por exemplo que eu quero estilizar APENAS os parágrafos que estão dentro de uma div devo utilizar:
+	div > p
+Nesse caso, apenas os "p" que estão dentro de uma div serão afetados pela configuração.
+OBS: Pode colocar quantas Tags quiser.
+*/
+div > p {
+	display: none;
+}
+
+div:hover > p {
+	display: block;
+	color: white;
+	background-color: red;
+	width: 300px;
+}
+
+
+
+
+
+/*########## ESTILIZAÇÃO DAS FORMAS*/
+
+/*Para poder configurar a mesma TAG porém de formas diferentes temos alguns modos.
+OBS: o "ID" em HTML é substituído por "#" no CSS
+	 o "Class" em HTML é substituído por "." no CSS
+	1- Colocando o ID na tag:*/
+	HTML ==> <h1 id="principal">Criando sites com HTML e CSS</h1>
+	CSS  ==> h1#principal {text-align: center;}
+	/*OBS: Acontece a herança de parâmetros, se tiver algo antes que impacte o H1 será aplicado a essa linha*/
+
+/*Altura*/
+height: [altura_a_ser_ocupada]
+
+/*Largura*/
+width: [largura_a_ser_ocupada]
+
+/*Peso*/
+weight: [peso]
+
+/*Deixar um elemento em Box-level*/
+display: block;
+
+/*Deixar um elemento em Inline-level (Não tem a propriedade de altura e largura por exemplo)*/
+display: inline;
+
+/*Deixar um elemento em Inline-level com propriedades de Bloco*/
+display: inline-block;
+
+
+/*### BORDA*/
+/*Largura da borda*/
+border-width: [tamanho_desejado]; /*px, em....*/
+
+/*Estilo da borda*/
+border-style: [config_aqui]; /*double, doshed, solid...*/
+
+/*Cor da borda*/
+border-color: [cor_da_borda];
+
+/*SHORTHANDS
+espessura -> estilo -> cor*/
+border: 10px solid darkslategray;
+
+
+/*### PADDING
+Espaço interno entre a borda e o texto*/
+/*Superior*/
+padding-top: [tamanho_desejado]; /*px, em....*/
+
+/*Direita*/
+padding-right: [tamanho_desejado]; /*px, em....*/
+
+/*Baixo*/
+padding-bottom: [tamanho_desejado]; /*px, em....*/
+
+/*Esquerda*/
+padding-left: [tamanho_desejado]; /*px, em....*/
+
+/*SHORTHANDS
+topo -> direita -> baixo -> esquerda
+
+OBS: Caso sejam de tamanho iguais, pode colocar apenas uma vez
+OBS2: Caso coloque apenas 2 valores, o primeiro vale para Cima e Baixo; o segundo valor vale para Direita e Esquerda
+OBS3: Caso queira deixar centralizado porém com uma borda superior e inferior, ao invés de informar o tamanho em PX das bordas laterais, pode ser colocada como "auto"*/
+padding: 10px 15px 20px 25px;
+padding: 10px auto 20px auto;
+
+
+/*### MARGIN*/
+/*Espaço externo entre a borda e o conteúdo externo*/
+/*Superior*/
+margin-top: [tamanho_desejado]; /*px, em....*/
+
+/*Direita*/
+margin-right: [tamanho_desejado]; /*px, em....*/
+
+/*Baixo*/
+margin-bottom: [tamanho_desejado]; /*px, em....*/
+
+/*Esquerda*/
+margin-left: [tamanho_desejado]; /*px, em....*/
+
+/*Centralizado*/
+margin: auto;
+
+/*SHORTHANDS
+topo -> direita -> baixo -> esquerda
+
+OBS: Caso sejam de tamanho iguais, pode colocar apenas uma vez
+OBS2: Caso coloque apenas 2 valores, o primeiro vale para Cima e Baixo; o segundo valor vale para Direita e Esquerda
+OBS3: Caso queira deixar centralizado porém com uma borda superior e inferior, ao invés de informar o tamanho em PX das bordas laterais, pode ser colocada como "auto"*/
+margin: 20px 20px 40px 20px;
+margin: 20px auto 40px auto;
+
+
+/*### OUTLINE*/
+/*Borda interna da margin
+Ela funciona meio q "Borda da Borda"*/
+/*Largura*/
+outline-width: [tamanho_desejado]; /*px, em....*/
+
+/*Estilo*/
+outline-style: [config_aqui]; /*double, doshed, solid...*/
+
+/*Cor*/
+outline-color: [nome_da_cor_ou_RGB];
+
+/*SHORTHANDS
+largura -> estilo da borda -> cor
+outline: 5px dashed salmon;
+
+/*### SOMBRAS*/
+/*Sombra da caixa
+box-shadow
+Sombrear a caixa do elemento
+deslocamento horizontal -> deslocamento vertical -> embaçamento -> espalhamento -> cor
+
+DICA: NUNCA colocar sombra com outra cor, o que pode ser usado é ADICIONAR uma transparência no preto para a sombra nao ficar muito forte
+DICA2: Recomendado usar de 0.5 para baixo a transparência 
+
+OBS: Caso queira criar uma sombra INTERNA, basta colocar "inset" antes dos parâmetros*/
+box-shadow: 5px 3px 7px 1px rgba(0, 0, 0, 0.349);
+
+/*### Arredondamento de borda*/
+/*Arredondar as bordas de uma tag */
+/*Superior Esquerda*/
+border-top-left-radius: 10px;
+
+/*Superior Direita*/
+border-top-right-radius: 10px;
+
+/*Inferior Direita*/
+border-bottom-right-radius: 10px;
+
+/*Inferior Esquerda*/
+border-bottom-left-radius: 10px;
+
+/*SHORTHANDS
+topo-esquerdo -> direita -> baixo -> esquerda
+
+OBS: Caso sejam de tamanho iguais, pode colocar apenas uma vez
+OBS2: Caso coloque apenas 2 valores, o primeiro vale para Cima Esquerda e Baixo Direita; o segundo valor vale para Cima Direita e Baixo Esquerda */
+border-radius: 5px 15px 25px 35px;
+
+/*Gerar uma bola
+Para gerar uma bola podemos criar uma DIV com as seguintes configs:*/
+div#bola {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}
+
+
+
+/*##### CORES*/
+
 /*Alterar cor de fundo*/
-background-color: [nome_da_cor_ou_RGB]
+background-color: [nome_da_cor_ou_RGB];
+
+/*Alterar cor de fundo em degradê
+Nas cores podem ter quantas quiser*/
+/*Em linhas*/
+background-image: linear-gradient(to right, white, blue); /*Indicação de sentido*/
+background-image: linear-gradient(45deg, white, blue); /*Indicação em graus*/
+background-image: linear-gradient([sentido_do_degrade], [cor1], [cor2], [cor3]);
+
+/*Em Circulo*/
+background-image: radial-gradient(circle, white, blue);
+
+/*Fixar o fundo, para que nao mude conforme for dando o Scroll*/
+background-attachment: fixed;
+
+
 
 /* ##### FONTE*/
 /*Alterar cor da fonte*/
-color: [nome_da_cor_ou_RGB]
+color: [nome_da_cor_ou_RGB];
 
-/*Alterar fonte*/
-font-family: [nome_da_fonte]
+/*Alterar fonte
+DICA: Colocar mais de um tipo de fonte, pois caso o navegador não suporte a primeira opção, tenta a segunda e assim por diante*/
+font-family: [nome_da_fonte_1], [nome_da_fonte_2];
 
 /*Alterar tamanho fonte
-OBS: "em" */
-font-size: [tamanho_da_fonte]px
-font-size: [tamanho_da_fonte]em
+Existem 2 tipos de medidas sendo elas:
+	ABSOLUTAS:
+	cm  (centímetros)
+	mm	(milímetros)
+	in	(polegadas)
+	pt	(pontos = 1/72 de uma polegada)
+	pc	(picas = 12 pontos)
+	px	(pixels)  ==> Recomendado
+	
+	RELATIVAS:
+	em   (Relativa ao tamanho da letra M de uma fonte (Maiúscula)) ==> Recomendado
+	ex   (Relativa ao tamanho da letra x de uma fonte (Minúscula))
+	rem  (Relativo ao tamanho da letra do body da pagina) 
+	vw   (Relativo a largura da sua tela)
+	vh   (Relativo a altura da sua tela)
+	
+OBS1: O tamanho padrão das fontes é de 16px
+OBS2: 16px geralmente = 1em; ou seja, 1em equivalem a 16 pixels
 
-/*Alinhamento de texto*/
-text-align: [modo_que_será_alinhado]
+DICA1: SEMPRE utilizar ou o tamanho "px" ou "em"
+DICA2: Utilizar o tamanho "em" pelo fato de termos telas pequenas como relógios, e grandes como TV ele se adapta conforme a %
+*/
+font-size: [tamanho_da_fonte]px;
+font-size: [tamanho_da_fonte]em;
+
+/*Alinhamento de texto
+	Esquerda: left
+	Centralizado: center
+	Direita: right
+	Justificado: justify
+*/
+text-align: [modo_que_será_alinhado];
+
+/*Tamanho da margem (Deixar um espaço vazio antes do início da frase)*/
+text-indent: [tamanho_a_ser_dado_o_espaçamento]; /*Pode ser em px, em, cm.....*/
+
+/*Peso da fonte, deixar mais gordinha ou mais magrinha (Negrito)
+OBS: A fonte deve ser a "Work-Sans"
+OBS2: A fonte deve ser importada via API do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+font-family: 'Work Sans', [outras_fontes];
+font-weight: [peso_da_fonte]; /*lighter normal bold bolder OU um numero de 100 a 900*/
+
+/*Fonte em itálico*/
+font-style: italic;
+
+/*Fonte sublinhada*/
+text-decoration: [tipo_do_sublinhado];
+
+/*DICA SHORTHAND
+Podemos simplificar o estilo de fonte em uma unica linha chamada de "Shorthand"*/
+font: [font_style] [font_weight] [font_size] [font_family]
+font: italic bolder 3em 'Work Sans', sans-serif;

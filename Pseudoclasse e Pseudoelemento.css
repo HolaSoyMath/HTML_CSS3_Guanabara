@@ -1,0 +1,37 @@
+/*##### PSEUDO-CLASSES*/
+
+/*Pseudo-classes são na verdade ações que quando acontecem, o elemento se comporta de X forma
+Ao configurar o CSS usamos o ":" para poder indicar que é de uma pseudo-classe */
+
+/*Quando colocado o mouse em cima
+hover 
+Ao passar o mouse em cima do item, a cor é alterada*/
+div:hover {background-color: blue;}
+
+/*Quando um link já foi visitado
+visited
+Quando um site contém um link que você ja visitou, ele fica com aquele roxo, é possível personalizar isso*/
+a:visited {color: darkred;}
+
+/*Quando clicado, alterar a cor
+active
+Quando clicar com o mouse, a cor muda*/
+a:active {color: yellow;}
+
+
+
+
+
+/*##### PSEUDO-ELEMENTOS*/
+/*Pseudo-elementos são palavras chave adicionadas que permitem estilizar uma parte especifica do html
+Ao configurar no CSS usamos o "::"*/
+
+/*Antes de cada elemento
+before
+Antes de todos os elementos com aquela TAG, X coisa é adicionada/feita*/
+a::before {content: ' teste ';}
+
+/*Depois de cada elemento
+after
+Depois de todos os elementos com aquela TAG, X coisa é adicionada/feita*/
+a::after {content: ' teste';}
