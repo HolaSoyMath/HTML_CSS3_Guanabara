@@ -1,5 +1,33 @@
 /*########## DICAS*/
 
+/*VARIÁVEIS NO CSS
+Para criar uma variável em CSS devemos criar uma classe com ":root", dentro dela criar as variáveis que são iniciadas por "--"
+
+OBS: Para utilizar as variáveis devemos usar como parâmetro a sintaxe "var([nome_variavel])*/
+:root {
+    --cor0: #c5ebdc; /*Definindo uma cor para a variável*/
+    --cor1: #83e1ad; /*Definindo uma cor para a variável*/
+    --cor2: #3ddc84; /*Definindo uma cor para a variável*/
+    --cor3: #2fa866; /*Definindo uma cor para a variável*/
+    --cor4: #1a5c37; /*Definindo uma cor para a variável*/
+    --cor5: #063d1e; /*Definindo uma cor para a variável*/
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;  /*Definindo uma fonte para a variável*/
+    --fonte-destaque: 'Bebas Neue', cursive;  /*Definindo uma fonte para a variável*/
+    --fonte-android: 'Android', cursive;  /*Definindo uma fonte para a variável*/
+}
+/*EX de uso*/
+background-color: var(--cor4);
+
+
+/*CONFIGURAÇÃO GLOBAL
+Caso queira setar algum parâmetro em TODOS os lugares, pode utilizar o elemento "*"*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/*Aqui iremos retirar a Margin e o Padding de TODOS os elementos da pagina*/
+
 /*
 HEIGHT ==> ALTURA
 WIDTH ==> LARGURA
@@ -114,6 +142,12 @@ div:hover > p {
 
 /*########## ESTILIZAÇÃO DAS FORMAS*/
 
+/*Largura mínima de um elemento (Muito utilizado para responsividade)*/
+min-width: 300px;
+
+/*Largura mínima de um elemento (Muito utilizado para responsividade)*/
+max-width: 300px;
+
 /*Para poder configurar a mesma TAG porém de formas diferentes temos alguns modos.
 OBS: o "ID" em HTML é substituído por "#" no CSS
 	 o "Class" em HTML é substituído por "." no CSS
@@ -194,7 +228,7 @@ margin-bottom: [tamanho_desejado]; /*px, em....*/
 /*Esquerda*/
 margin-left: [tamanho_desejado]; /*px, em....*/
 
-/*Centralizado*/
+/*Deixar um elemento no Centro da página*/
 margin: auto;
 
 /*SHORTHANDS
@@ -222,6 +256,68 @@ outline-color: [nome_da_cor_ou_RGB];
 /*SHORTHANDS
 largura -> estilo da borda -> cor
 outline: 5px dashed salmon;
+
+
+/*### IMAGENS RESPONSIVAS
+Para que a imagem preencha o espaço todo, podemos colocar o que a imagem ocupará "100%" do espaço que pode ser utilizado, sendo assim conforme tiver mais pixels dospiníveis ela vai se adequendo.
+O mesmo ocorre quando nao tem tantos pixels disponiveis, a imagem vai diminuindo.*/
+img {
+    width: 100%;
+}
+
+
+/*### IMAGENS CENTRALIZADAS
+Para centralizar uma imagem em um elemento, precisamos tranformar ela primeiramente em um "bloco"
+Ao transformar em bloco podemos usar a propriedade do "Margin: auto" para que ela fique sempre centraizada*/
+img{
+    display: block;
+    margin: auto;
+}
+
+/*Animação
+Podemos adicionar uma animação na hora que o elemento aparece
+para isso criamos o "transition duration"
+
+OBS: Nesse caso, tudo o que acontecer com os links, como por exemplo alterar cor ao colocar o mouse em cima, a animação dura 1 segundo*/
+a {
+    transition-duration: 1s;
+}
+
+
+/*### VÍDEOS EXTERNOS CENTRALIZADOS*/
+/*Para que possamos centralizar um vído do YOutube por exemplo que vem de um "iFrame", precisamos primeiramente colocar ele dentro de uma "div"
+
+OBS: Para exemplo, já colocamos a Class no qual a div irá pertencer*/
+<div class="video">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/l2UDgpLz20M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+/*Já na pagina do CSS devemos adicionar as 2 configurações abaixo.*/
+/*Padding-Bottom: quando bem adequado faz com que o vídeo se adapte sem deixar bordas pretas nos cantos ou na parte superior/inferior.
+position: A posição da "div" OBRIGATORIAMENTE deve ser "relative"
+
+OBS: O valor da % pode variar de acordo com a necessidade. */
+div.video {
+    padding-bottom: 56.6%;
+    position: relative;
+}
+
+/*position: A posição do "iframe" OBRIGATORIAMENTE deve ser "absolute"
+top: Como se fosse o "padding" da div, deve ser em % para acompanhar a responsividade.
+left: Como se fosse o "padding" da div, deve ser em % para acompanhar a responsividade.
+width: Como mudamos o "position" para absolute, podemos mexer nessa configuração, onde a largura deve ser colocada em % para acompanhar a responsividade
+height: Como mudamos o "position" para absolute, podemos mexer nessa configuração, onde a altura deve ser colocada em % para acompanhar a responsividade
+
+OBS: Os valores das % podem variar de acordo com a necessidade. */
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
 
 /*### SOMBRAS*/
 /*Sombra da caixa
@@ -348,3 +444,26 @@ text-decoration: [tipo_do_sublinhado];
 Podemos simplificar o estilo de fonte em uma unica linha chamada de "Shorthand"*/
 font: [font_style] [font_weight] [font_size] [font_family]
 font: italic bolder 3em 'Work Sans', sans-serif;
+
+/*Distancia de uma linha para a outra dentro de um Paragrafo por exemplo*/
+p {
+    line-height: 1em; /*Deixar a distancia bem pequena*/
+}
+
+
+/*### LISTAS*/
+/*Caso a "bolinha" das listas fique do lado de fora do elemento que necessita (é o Padrão), precisamos informar que queremos ela do lado de dentro*/
+ul {
+    list-style-position: inside;
+}
+
+/*Para dividir a lista em mais de uma coluna usamos a propriedade "columns"*/
+ul {
+    columns: 2;
+}
+
+/*Alterar a "bolinha" que aparece na UL por um emoji
+DICA: Acessar o EMojipedia para achar o código do Emoji*/
+ul {
+    list-style-type: '\2714\00A0\00A0'; /* NÃO ESQUECER NO "\" ANTES (No final foi colocado o "\00A0" que significa o "espaço" para dar um espaçamento com o texto da lista*/
+}

@@ -3,6 +3,8 @@
     src: url(fontes/idroid.otf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body {
     background-color: #84E1AD;
     margin: 0px;
@@ -13,7 +15,7 @@ header {
 }
 
 header > h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Bebas Neue', cursive;
     color: white;
     text-align: center;
     padding: 20px;
@@ -37,11 +39,18 @@ nav > a {
     text-decoration: none;
 }
 
+nav > a:hover {
+    background-color: blue;
+}
+
 main {
     width: 820px;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
+    padding-bottom: 1px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 h1 {
@@ -68,20 +77,24 @@ p {
     text-indent: 25px;
 }
 
-P > img {
-    text-align: center;
+img {
+    width: auto;
+    height: auto;
+    margin: 0px 10px;
 }
 
 .video-externo {
     display: flex;
     background-color: darkgreen;
-    margin: 0pc auto;
+    width: auto;
+    height: auto;
+    margin: 0px 10px;
 }
 
 .extra {
     background-color: #84E1AD;
     border-radius: 10px;
-    margin: 10px;
+    margin: 1px 10px;
 }
 
 footer {
