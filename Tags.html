@@ -344,3 +344,63 @@ OBS3: Para conseguir utilizar os sites, é preciso clicar em "compartilhar" e se
 </video>
 <!-- VÍDEO HOSPEDADO -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9rZKhGrQ1wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<!-- Criação de tabelas
+
+<!-- HIERARQUIA DE TABLEAS
+TABLE = Criação da Tabela
+
+	CAPTION = Descrição da tabela, ela aparece logo em cima da tabela
+
+	THEAD = Cabeçalho da tabela
+		TR = Table Row (Linha da tabela)
+			TH = Table Head (Nome do cabeçalho)
+			TD = Table Data (Dados da tabela)
+			
+	TBODY = Corpo da Tabela
+		TR = Table Row (Linha da tabela)
+			TH = Table Head (Nome do cabeçalho)
+			TD = Table Data (Dados da tabela)
+			
+	TFOOT = Pé da Tabela
+		TR = Table Row (Linha da tabela)
+			TH = Table Head (Nome do cabeçalho) ==> caso for fazer uma soma geral por exemplo ("Soma total de habitantes")
+			TD = Table Data (Dados da tabela) ==> Aqui seria o valor dessa soma geral
+
+A Tabela é dividida em 2 seções:
+
+TR: "Table Row" Linha da tabela em questão.
+TD: "Table Data" Coluna da Tabela em questão juntamente com o dado a aparecer nela -->
+<table>
+	<tr> <!-- Primeira linha (Linha 1 do Excel) --> 
+		<td></td> <!-- Primeira coluna (Célula A1 do Excel) -->
+		<td></td> <!-- Segunda coluna (Célula B1 do Excel) -->
+		<td></td> <!-- Terceira coluna (Célula C1 do Excel) -->
+	</tr>
+	
+	<tr> <!-- Segunda linha (Linha 2 do Excel)--> 
+		<td></td> <!-- Primeira coluna (Célula A2 do Excel) -->
+		<td></td> <!-- Segunda coluna (Célula B2 do Excel) -->
+		<td></td> <!-- Terceira coluna (Célula C2 do Excel) -->
+	</tr>
+	
+	<!-- Importante informar se aquele "th" é referente a coluna inteira da tabela ou se é referente a linha dele -->
+	<th scope="row">Total de Habitantes</th> <!-- Referente a linha -->
+	<th scope="col">Total de Habitantes</th> <!-- Referente a coluna -->
+	<th scope="rowgroup">Total de Habitantes</th> <!-- Referente a linha com span-->
+	<th scope="colgroup">Total de Habitantes</th> <!-- Referente a coluna com span -->
+	
+</table>
+
+<!-- Mesclar coluna ou Mesclar linha -->
+<td colspan="2">B</td> <!-- Mesclar 2 colunas -->
+<td rowspan="2">B</td> <!-- Mesclar 2 linhas -->
+
+<!-- Criar um grupo de colunas em uma tabela -->
+<colgroup>
+	<col class="cnome">
+	<col class="csexo">
+	<col class="cidade">
+	<col class="cprof">
+</colgroup>

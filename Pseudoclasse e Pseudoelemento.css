@@ -18,6 +18,19 @@ active
 Quando clicar com o mouse, a cor muda*/
 a:active {color: yellow;}
 
+/*Efeito zebrado em uma Tabela
+nth-child
+Ao criar um style com tal classe você define a cada quantas vezes esse efeito se repetirá
+Nesse caso demonstrado, o efeito se repete a cada 2 linhas
+
+OBS: O argumento pode ser trocado por exemplo para
+	ODD: Todas as linhas ímpares (Pode colocar tbm 2n-1)
+	EVEN: Todas as linhas pares (Pode colocar tbm 2n)
+	
+DICA: Uma dica que pode ser feita é unir os 2, usar uma cor para os pares, e outra para os ímpares*/
+tbody > tr:nth-child(2n) {
+	background-color: lightgray;
+}
 
 
 

@@ -165,7 +165,7 @@ width: [largura_a_ser_ocupada]
 /*Peso*/
 weight: [peso]
 
-/*Deixar um elemento em Box-level*/
+/*Deixar um elemento em Box-level (O elemento vira um bloco)*/
 display: block;
 
 /*Deixar um elemento em Inline-level (Não tem a propriedade de altura e largura por exemplo)*/
@@ -258,21 +258,27 @@ largura -> estilo da borda -> cor
 outline: 5px dashed salmon;
 
 
-/*### IMAGENS RESPONSIVAS
+/*### IMAGENS*/
+/*Imagem responsiva
 Para que a imagem preencha o espaço todo, podemos colocar o que a imagem ocupará "100%" do espaço que pode ser utilizado, sendo assim conforme tiver mais pixels dospiníveis ela vai se adequendo.
 O mesmo ocorre quando nao tem tantos pixels disponiveis, a imagem vai diminuindo.*/
 img {
     width: 100%;
 }
 
-
-/*### IMAGENS CENTRALIZADAS
+/*Imagem Centralizada
 Para centralizar uma imagem em um elemento, precisamos tranformar ela primeiramente em um "bloco"
 Ao transformar em bloco podemos usar a propriedade do "Margin: auto" para que ela fique sempre centraizada*/
 img{
     display: block;
     margin: auto;
 }
+
+/*Imagem com efeito parallax
+Efeito Parallax é o efeito que temos que ao rolar a página a imagem fica FIXA no fundo*/
+background-attachment: fixed;
+
+
 
 /*Animação
 Podemos adicionar uma animação na hora que o elemento aparece
@@ -364,6 +370,7 @@ div#bola {
 
 /*##### CORES*/
 
+/*ALTERAR FUNDO*/
 /*Alterar cor de fundo*/
 background-color: [nome_da_cor_ou_RGB];
 
@@ -379,6 +386,63 @@ background-image: radial-gradient(circle, white, blue);
 
 /*Fixar o fundo, para que nao mude conforme for dando o Scroll*/
 background-attachment: fixed;
+
+/*Para que uma imagem preencha 100% do navegador e não se distorça ou se repita, definimos que a configuração abaixo
+
+DICA: Usar o tamanho em "vh" (View Height) que seria a área de visuzalização, dessa forma ela vai se modificando conforme o tamanho da tela */
+height: 100vh;
+
+/*Colocar uma imagem como fundo*/
+background-image: url([local_do_arquivo]); /*Pode ser colocada entre aspas tbm o caminho*/
+
+/*Definir o tamanho da imagem de fundo*/
+background-size: 100px 100px;
+background-size: cover; /*Preenche 100% do espaço porém sem achatar a imagem, pode até cortar uma parte, mas não achata
+						  OBS: Ao rolar a página para baixo, pode ter um problema onde a imagem se repete no eixo Y, ou fica apenas a cor de fundo para resolver utilizamos a "background-attachment"*/
+
+/*Definir o modo que a imagem aparece (Ancoragem da imagem de fundo)*/
+background-attachment: fixed;
+
+/*Sem repetição da imagem de fundo*/
+background-repeat: no-repeat;
+
+/*Repetir a imagem de fundo apenas no eixo Horizontal*/
+background-repeat: repeat-x;
+
+/*Repetir a imagem de fundo apenas no eixo Vertical*/
+background-repeat: repeat-y;
+
+/*Indicar a ancoragem da imagem de fundo
+
+OBS: Caso use no BODY não esquecer de adaptar a altura para que nao fique uma imagem achatada*/
+background-position: left top; /*(Podemos utilizar, center, top, bottom, left e right*/
+
+/*SHORTHANDS
+color -> image -> position -> repeat -> attachment*/
+background: black url(images/wallpaper002.jpg) center center no-repeat fixed;
+
+/*Para alinhar uma imagem no meio com uma div (centralização vertical)*/
+<style>
+        #container {
+            background-image: url(images/target001.png);
+            background-size: 100% 100%;
+            position: relative; /*OBRIGATÓRIO*/
+        }
+
+        #conteudo {
+            background-image: url(images/target001.png);
+            background-size: 100% 100%;
+            position: absolute; /*OBRIGATÓRIO*/
+            left: 50%; /*OBRIGATÓRIO*/
+            top: 50%; /*OBRIGATÓRIO*/
+            transform: translate(-50%, -50%); /*OBRIGATÓRIO*/
+        }
+</style>
+<section id="container">
+	<article id="conteudo">
+
+	</article>
+</section>
 
 
 
@@ -415,6 +479,8 @@ DICA2: Utilizar o tamanho "em" pelo fato de termos telas pequenas como relógios
 */
 font-size: [tamanho_da_fonte]px;
 font-size: [tamanho_da_fonte]em;
+font-size: [tamanho_da_fonte]vh; /*Adaptar o tamanho da fonte conforme a tela, se a tela for maior a fonte fica maior, se a tela for menor a fonte fica menor tambem
+									OBS: A melhor forma é utilizando as "Media Queries", porém funciona*/
 
 /*Alinhamento de texto
 	Esquerda: left
@@ -450,6 +516,11 @@ p {
     line-height: 1em; /*Deixar a distancia bem pequena*/
 }
 
+/*Transformar um texto, como por exemplo colocar TODAS as letras em maiúsculo
+OBS: Possui tambem outras funções*/
+text-transform: uppercase;
+
+
 
 /*### LISTAS*/
 /*Caso a "bolinha" das listas fique do lado de fora do elemento que necessita (é o Padrão), precisamos informar que queremos ela do lado de dentro*/
@@ -467,3 +538,70 @@ DICA: Acessar o EMojipedia para achar o código do Emoji*/
 ul {
     list-style-type: '\2714\00A0\00A0'; /* NÃO ESQUECER NO "\" ANTES (No final foi colocado o "\00A0" que significa o "espaço" para dar um espaçamento com o texto da lista*/
 }
+
+
+
+/*### TABELAS*/
+/*Para estilizar tabelas deveos nos atentar as seguintes informações:
+Para estilizar a borda da tabela como um todo, vamos estilizar a tag "table"
+Para estilizar a borda de cada campo presente na tabela e fazer por exemplo grade em cada uma das células, vamos estilizar os "td"*/
+
+/*Não deixar espaço entre os dados da tabela*/
+border-collapse: collapse;
+
+/*Alinhar texto das colunas no meio na Horizontal (eixo X)
+OBS: Estilização na tag "td"*/
+text-align: center;
+
+/*Alinhar texto das colunas no meio na Vertical (eixo Y)
+OBS: Estilização na tag "td"*/
+vertical-align: bottom;
+
+/*Efeito zebrado
+Consutlar o arquivo de Pseudoclasse*/
+
+/*Deixar o cabeçalho congelado assim que ele for sumir (Congelar cabeçalho)*/
+table {
+	position: relative; /*OBRIGATÓRIO*/
+}
+
+thead > tr > th {
+	position: sticky; /*OBRIGATÓRIO*/
+	top: -1px; /*OBRIGATÓRIO, colocamos -1px para que não apareça uma pequena fresta na aprte de cima quando for rolar a página para baixo*/
+	background-color: [colocar_a_cor_de_background_do_cabeçalho]; /*OBRIGATÓRIO*/
+}
+
+/*Destacar uma coluna inteira
+Para destacar uma coluna inteira, precisamos criar um "Grupo de coluna"
+
+OBS: A quantidade de "col" dentro da tag de ColGroup depende de quantas colunas tem na tabela
+Cada uma dessas tags "col" é possivel dar a elas uma classe ou id, que pode ser configurado no Style da página*/
+<colgroup>
+	<col class="cnome">
+	<col class="csexo">
+	<col class="cidade">
+	<col class="cprof">
+</colgroup>
+/*É POSSIVEL COLOCAR A MESMA CLASSE EM 2 COLUNAS QUE ESTEJAM UMA DO LADO DA OUTRA COM O PARÂMETRO SPAN
+Dessa forma configuramos as 4 colunas da mesma forma, porém 2 delas va ter a mesma configuração*/
+<colgroup>
+	<col class="cnome">
+	<col class="csexo", span="2">
+	<col class="cprof">
+</colgroup>
+
+/*Tabela responsiva
+Antes de tudo, deve ser feito o ENVELOPAMENTO da tabela toda em uma div.
+Essa div deve receber um ID ou uma class que tenha o atributo "overflow" (Transbordar)
+Com isso, ao rolar para o lado a página por exemplo, apenas a tabela será rolada, o texto da página ficará estático
+
+OBS: o Overflow tem no modo "y" e apenas "overflow" tambem.
+*/
+div#container {
+	overflow-x: auto;
+}
+
+<div id="container">
+	<table>
+	</table>
+</div>
