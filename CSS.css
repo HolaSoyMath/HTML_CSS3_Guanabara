@@ -278,6 +278,10 @@ img{
 Efeito Parallax é o efeito que temos que ao rolar a página a imagem fica FIXA no fundo*/
 background-attachment: fixed;
 
+/*Imagem redonda
+Para tornar uma imagem redonde e deixar ela como se fosse um botão redondo por exemplo basta colocar o border radius ocupando metade da imagem.*/
+border-radius: 50%;
+
 
 
 /*Animação
@@ -605,3 +609,13 @@ div#container {
 	<table>
 	</table>
 </div>
+
+
+
+/*### IFRAME*/
+/*Barra de rolagem (scrolling)
+Existem 3 modos para as barras de rolagem: */
+scrolling="auto" /*Caso a pagina tenha um conteúdo maior, aparece a barra de rolagem*/
+scrolling="yes" /*Aparece a barra de rolagem independente do tamanho*/
+scrolling="no" /*Não aparece a barra de rolagem e a pagina fica parecendo uma imagem, snedo impossivel mexe-la*/
+

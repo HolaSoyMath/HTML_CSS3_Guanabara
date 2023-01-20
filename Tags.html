@@ -194,6 +194,8 @@ abbr
 Ao abreviarmos uma palavra, podemos então indicar o que ela significa, assim quando o usuário colocar o mouse em cima da palavra, aparecerá a explicação daquela abreviação de forma completa -->
 <p>Estou estudando <abbr title="[explicação_da_abreviação]">[texto_a_ser_exibido]</abbr>Estou adorando!</p>
 
+
+
 <!-- ### LISTAS -->
 <!-- Listas ordenadas
 ol ==> li
@@ -238,6 +240,8 @@ Lista de definição é uma lista onde colocamos um termo e na sequencia a defin
 	<dd>[descrição_3]</dd>
 </dl>
 
+
+
 <!-- ### LINKS -->
 <!-- Link externo/interno
 a
@@ -273,6 +277,8 @@ PARAM type: Tipo do arquivo a ser baixado.
 	
 OBS: Caso tenha espaço no meio, troque o espaço por "%20". -->
 <a href="[caminho_do_arquivo]" download="[nome_do_arquivo]" type="[tipo_do_arquivo]">[texto_clicável]</a>
+
+
 
 <!-- ### MÍDIAS -->
 <!-- Imagem Dinâmica
@@ -346,6 +352,9 @@ OBS3: Para conseguir utilizar os sites, é preciso clicar em "compartilhar" e se
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9rZKhGrQ1wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+
+<!-- ###TABELAS -->
+
 <!-- Criação de tabelas
 
 <!-- HIERARQUIA DE TABLEAS
@@ -404,3 +413,88 @@ TD: "Table Data" Coluna da Tabela em questão juntamente com o dado a aparecer n
 	<col class="cidade">
 	<col class="cprof">
 </colgroup>
+
+
+
+<!-- ###IFRAME -->
+
+<!-- Iframe nada mais é do que carregar outra página dentro do seu site, ele basicamente cria um quadro (frame) que aparece a URL escolhida dentro dele 
+
+OBS: Nem todos os sites podem ser colocados no Iframe, o Google por exemplo tem uma proteção que não permite que ele seja exibido em um iframe -->
+
+<iframe src="https://www.cursoemvideo.com" frameborder="0">[Mensagem_caso_o_navegador_nao_suporte_o_iframe]</iframe>
+<!-- DICA: na mensagem coloca o link, caso nao apareça o iframe, aparece um link para o site -->
+
+<!-- Escolher ujma página a ser aberta no Iframe
+Para poder escolher a página que o iframe irá exibir temos que seguir algumas regras:
+	1° ==> Criar um link ond eo usuário irá clicar e redirecionaria para a página em questão, porém em no parâmetro "target" vamos colocar o NAME do iframe -->
+<a href="paginas-extras/pag001.html" target="[nome_do_frame]">Primeira página</a></li>
+
+<!-- 2° ==> Criar o iframe com um "name" como parâmetro
+OBS: Esse name será o mesmo que terá de ser colocado no link
+OBS2: Caso queira deixar uma página como padrão, é possível colocar a URL no parâmetro de "src"
+OBS3: Caso queira deixar um texto como padrão, é possível colocar o texto com tagas como "h1, p" substituindo o parâmetro "src" para "srcdoc"
+OBS3: Caso queira colocar uma imagem, é possível colocar a tag "img" dentro de "srcdoc".
+	ATENÇÃO: Ao colocar o caminho da imagem, deve-se colcoar em aspas simples!!! 
+-->
+<iframe name="[nome_do_frame]" src="">Infelizmente seu navegador não é compatível com isso.</iframe>
+
+
+<!-- ###FORMULARIOS -->
+
+<!-- Para criar um formulário temos que utilizar a TAG "Form", o formulário serve para enviar informações de uma janela para outra por exemplo, muito utilizado para cadastros, e login por exemplo. 
+
+PARAM action: Para qual página serão enviadas as informações após clicar no botão de "submit".
+PARAM method: é como o formulário irá passar os dados do formulário e podem ser escolhidas 2 opções:
+		1- GET ==> Passa pela URL.
+		2- POST ==> Passa pelas "entrelinhas", no Headers.
+PARAM autocomplete: Caso deseje desligar a opção de autocompletar, basta colocar esse parametro com o valor "off"-->
+<form action="" method="get" autocomplete="on">
+</form>
+
+<!-- #INPUT -->
+<!-- Para tornar um Input sendo OBRIGATÓRIO seu preenchimento basta adicionar o parâmetro "REQUIRED" -->
+<input type="text" required>
+
+<!-- Para limitar o tamanho de caracteres no Input usamos os parâmetros "minlenght" e "maxlenght" -->
+<input type="text" minlength="5" maxlength="15">
+
+<!-- Input:text 
+Serve para criar um campo de input do tipo texto, string.
+
+PARAM type: Tipo da caixa, no caso é de texto
+PARAM name: Nome da text box.   <<OBRIGATÓRIO>> 
+PARAM id: ID da text box.   	<<OBRIGATÓRIO>>  -->
+<input type="text" name="nome" id="inome">
+
+<!-- Input:password 
+Serve para criar um campo de input do tipo senha, onde o que for digitado será transformado naquelas bolinhas.
+
+PARAM type: Tipo da caixa, no caso é de password.
+PARAM name: Nome da text box.   <<OBRIGATÓRIO>> 
+PARAM id: ID da text box.   	<<OBRIGATÓRIO>>  -->
+<input type="password" name="sen" id="isen">
+
+
+<!-- Input:submit 
+Serve para criar um botão do tipo submit, que seria para enviar os dados, confirmar que está sendo enviada as informações.
+
+PARAM type: Tipo da caixa, no caso é de submit.
+PARAM value: O que aparecerá dentro do botão, o texto.  -->
+<input type="submit" value="Enviar">
+
+<!-- Input:reset 
+Serve para criar um botão do tipo reset, que seria para apagar as informações do formulário que já foram preenchidas.
+
+PARAM type: Tipo da caixa, no caso é de reset.
+PARAM value: O que aparecerá dentro do botão, o texto.  -->
+<input type="reset" value="Limpar">
+
+
+
+<!-- #LABEL -->
+<!-- Para criar uma etiqueta para cada campo, sendo assim possível ter uma identificação do que preencher no campo, vamos utilizar a tag "Label".
+Na criação do Input, é OBRIGATÓRIO ter um "ID" e um "NAME", para utilizar o Label da forma correta no parâmetro "for" colocamos o "ID" do input ao qual ele se refere.
+
+PARAM for: Valor "ID" do input ao qual a label se refere -->
+<label for="[ID_input]">[texto_que_aparecerá_na_label]</label>
